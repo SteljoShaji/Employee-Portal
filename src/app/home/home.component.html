@@ -1,0 +1,37 @@
+
+<div class="d-flex border border-light">
+    <div style="width: 200px; height: 90vh;" class="sidebar bg-info p-3 d-flex flex-column">
+<a routerLink="/home">HOME</a>
+<a routerLink="/users">USERS</a>
+
+<button (click)="logout()" class="btn mt-auto fs-4  fw-bolder"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</button>
+
+
+    </div>
+    <div class="dashbord p-3 w-100">
+    <div class="row">
+        <div class="col-lg-8">
+            <div style="height: 150px;background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8Zq6d4wprjzx9fH5ChndwvWneMu9PkOr6r9vIBdkcTTzm39Aw42QFbFpme4Rpri9P0g&usqp=CAU);
+            background-size: cover;" class="admin-panel  rounded d-flex align-items-center">
+            <h1 class="ms-5" >Welcome <span>{{adminName}}</span></h1></div>
+            
+            <div class="d-flex mt-3">
+                <div style="height: 450px" class="col-lg-5 border rounded p-2 shadow"><app-inline-calender></app-inline-calender>  </div>
+                <div class="col-lg-1"></div>
+                <div style="height: 450px" class="col-lg-6 border rounded p-2 shadow "><app-chart></app-chart></div>
+            </div>
+
+        </div>
+        <div class="col-lg-4">
+            <div style="height: 400px; background-color: rgb(48, 46, 58);" class="admin-details border shadow rounded mb-2 p-2">
+               
+               <!--edit-admin component view-->
+                <app-edit-admin (onUpdate)="updateAdminName($event)"></app-edit-admin> 
+            </div>
+            <div style="height: 200px;background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8Zq6d4wprjzx9fH5ChndwvWneMu9PkOr6r9vIBdkcTTzm39Aw42QFbFpme4Rpri9P0g&usqp=CAU);
+            background-size: cover;" class="random-user  rounded d-flex align-items-center mt-2 p-2 justify-content-center fs-4  ">
+            <i class="fa-users fa-solid  me-2"></i>Employee : <span class="ms-2">{{totalUserCount}}</span></div>
+        </div>
+    </div>
+    </div>
+</div>
